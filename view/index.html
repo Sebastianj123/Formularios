@@ -49,38 +49,38 @@
     <article>
 
         <!-- Formulario donde se van a ingresar los datos -->
-        <!-- Aquí dentro se encuentran etiquetas "hijas directas" las cuales son hr div#inputs y input:sub -->
+        <!-- Aquí dentro se encuentran etiquetas "hijas directas" las cuales son hr div#inputs -->
         <form>
             
             <!-- Etiqueta div que contiene todo el "formulario" (hace las de form) -->
             <!-- cotiene:
             - Div con id "nomAPe" (div que contiene los input con sus label de nombre y apellido tipo text)
             - hr Divisorio con clase "division"
-            - Div con id "otrosDatos" 
-
+            - Div con id "otrosDatos" que contiene un div con id "doc" (tipo y numero de documento), 
+                    input y label de email id "email" name "email",
+                    Direccion id "address" name "address",
+                    TelCelular id "cellphone" name "cellphone"
+            - hr Divisorio con clase "division"
+            - Div con id "timeColor" que contiene 
             -->
             <div id="inputs">
 
                 <div id="nomApe">
 
                     <!-- Nombre -->
-                    <label for="name">Nombre: </label>
+                    <!-- <label for="name">Nombre: </label> -->
                     <input type="text" value="" placeholder="Digitar Nombre" id="name" name="name" required />
                 
 
                     <!-- Apellido -->
-                    <label for="lastName">Apellido: </label>
+                    <!-- <label for="lastName">Apellido: </label> -->
                     <input type="text" value="" placeholder="Digitar Apellido" id="lastName" name="lastName" required />
 
                 </div>
 
                 <hr class="division">
                 
-                que contiene un div con id "doc" (tipo y numero de documento), 
-                    input y label de email id "email" name "email",
-                    Direccion id "address" name "address",
-                    TelCelular id "cellphone" name "cellphone"
-
+                
                 <!-- Se encuentra el tipo de documento, numero de documento, email, direccion y celular -->
                 <div id="otrosDatos">
 
@@ -98,21 +98,21 @@
                         </select>
 
                         <!-- Documento (Número) -->
-                        <label for="document" class="document">Número Doc: </label>
+                        <!-- <label for="document" class="document">Número Doc: </label> -->
                         <input type="number" value="" class="document"placeholder="Digitar Documento" id="document" name="document" required />
 
                     </div>
 
                     <!-- Email -->
-                    <label class="email" for="email">Correo: </label>
+                    <!-- <label class="email" for="email">Correo: </label> -->
                     <input class="email" type="email" value="" placeholder="Digitar Correo Electrónico" id="email" name="email" required />
 
                     <!-- Dirección -->
-                    <label class="address" for="address">Dirección: </label>
+                    <!-- <label class="address" for="address">Dirección: </label> -->
                     <input class="address"type="text" value="" placeholder="Digitar Dirección" id="address" name="address" required />
 
                     <!-- TElefono Celular -->
-                    <label class="cellphone"  for="cellphone">Celular: </label>
+                    <!-- <label class="cellphone"  for="cellphone">Celular: </label> -->
                     <input class="cellphone" type="tel" value="" placeholder="Digitar Celular" id="cellphone" name="cellphone" required />
                 
                 </div>
@@ -123,15 +123,15 @@
                 <div id="timeColor">
 
                     <!-- Fecha -->
-                    <label class="dateBir" for="birthdate">Fecha De Nacimiento: </label>
+                    <!-- <label class="dateBir" for="birthdate">Fecha De Nacimiento: </label> -->
                     <input class="dateBir" type="date" value="" placeholder="Fecha de Nacimiento" id="birthdate" name="birthdate" required />
 
                     <!-- Tiempo (hora) -->
-                    <label class="lunchTime" for="lunchTime">Hora Del Almuerzo: </label>
+                    <!-- <label class="lunchTime" for="lunchTime">Hora Del Almuerzo: </label> -->
                     <input class="lunchTime" type="time" value="" id="lunchTime" name="lunchTime" required />
                 
                     <!-- Color -->
-                    <label class="color" for="color">Color Favorito: </label>
+                    <!-- <label class="color" for="color">Color Favorito: </label> -->
                     <input class="color" type="color" value="" id="color" name="color" required />
 
                 </div>
@@ -139,11 +139,11 @@
 
             </div>
 
-            <!-- Boton de subir -->
-            <input type="submit" value="ENVIAR" id="btnSubmit" name="btnSubmit" required />
-
-
         </form>
+
+        <!-- Boton de subir -->
+        <input type="submit" value="ENVIAR" id="btnSubmit" name="btnSubmit" required />
+
         
     </article>
 

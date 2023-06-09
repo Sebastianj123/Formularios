@@ -5,27 +5,33 @@
     color: #fff;
 }
 
+/* Display flex y centrado con flexbox */
 body {
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* tamaño de la pantalla */
+body, body::before {
     width: 100vw;
     height: 100vh;
+}
+
+body {
+    
+    
     background: url(../img/wallpaper.jpg);
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     backdrop-filter: blur(2px);
-    margin: auto .001vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
 }
 
 body::before {
     content: "";
-    width: 100vw;
-    height: 100vh;
     position: absolute;
     opacity: .3;
     background: #000;
@@ -66,6 +72,7 @@ article {
     position: relative;
     padding: 3vw;
     border-radius: 2vw;
+    flex-direction: column;
 }
 
 article::before {
@@ -84,6 +91,15 @@ form {
     display: flex;
     flex-direction: column;
     max-width: 40vw;
+}
+
+#inputs > div {
+    padding: 2vh 2vw;
+}
+
+#nomApe {
+    display: flex;
+    flex-direction: column;
 }
 
 
