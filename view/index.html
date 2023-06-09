@@ -11,112 +11,149 @@
     <!-- Linkeado de css -->
     <link rel="stylesheet" href="../assets/css/style.css">
 
+    <!-- Linkeado de iconos externos -->
+    <!-- <script src="https://kit.fontawesome.com/bb68000e5f.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 </head>
 
 <body>
 
-    <!-- Formulario donde se van a ingresar los datos -->
-    <!-- Aquí dentro se encuentran 3 etiquetas "hijas directas" las cuales son h1 div#inputs y input:sub -->
-    <form>
+<div id="bodydiv">
 
-        <!-- Titulo -->
-        <h1>FORMULARIO DE REGISTRO</h1>
+        <!-- Sección de la derecha -->
+        <article>
 
+            <!-- Formulario donde se van a ingresar los datos -->
+            <!-- Aquí dentro se encuentran etiquetas "hijas directas" las cuales son hr div#inputs y input:sub -->
+            <form>
+                
+                <div id="inputs">
+    
+                    <div id="nomApe">
+    
+                        <!-- Nombre -->
+                        <label for="name">Nombre: </label>
+                        <input type="text" value="" placeholder="Digitar Nombre" id="name" name="name" required />
+                    
+    
+                        <!-- Apellido -->
+                        <label for="lastName">Apellido: </label>
+                        <input type="text" value="" placeholder="Digitar Apellido" id="lastName" name="lastName" required />
+    
+                    </div>
+    
+                    <hr class="division">
+                    
+                    <!-- Se encuentra el tipo de documento, numero de documento, email, direccion y celular -->
+                    <div id="otrosDatos">
+    
+                        <!-- Datos relacionados con el documento de la persona (tipo doc y numero de doc)-->
+                        <div id="doc">
+    
+                            <!-- Selecionar el tipo de documento -->
+                            <select name="typeDocument" id="typeDocument" required>
+    
+                                <!-- Opciones del input Select -->
+                                <option value="0">TI</option>
+                                <option value="1">CE</option>
+                                <option value="2">CC</option>
+    
+                            </select>
+    
+                            <!-- Documento (Número) -->
+                            <label for="document">Número Doc: </label>
+                            <input type="number" value="" placeholder="Digitar Documento" id="document" name="document" required />
+    
+                        </div>
+    
+                        <!-- Email -->
+                        <label for="email">Correo: </label>
+                        <input type="email" value="" placeholder="Digitar Correo Electrónico" id="email" name="email" required />
+    
+                        <!-- Dirección -->
+                        <label for="address">Dirección: </label>
+                        <input type="text" value="" placeholder="Digitar Dirección" id="address" name="address" required />
+    
+                        <!-- TElefono Celular -->
+                        <label for="cellphone">Celular: </label>
+                        <input type="tel" value="" placeholder="Digitar Celular" id="cellphone" name="cellphone" required />
+                    
+                    </div>
+    
+                    <hr class="division">
+    
+                    <!-- Se encuentran datos relacionados con fechas y el color -->
+                    <div id="timeColor">
+    
+                        <!-- Fecha -->
+                        <label for="birthdate">Fecha De Nacimiento: </label>
+                        <input type="date" value="" placeholder="Fecha de Nacimiento" id="birthdate" name="birthdate" required />
+    
+                        <!-- Tiempo (hora) -->
+                        <label for="lunchTime">Hora Del Almuerzo: </label>
+                        <input type="time" value="" id="lunchTime" name="lunchTime" required />
+                    
+                        <!-- Color -->
+                        <label for="color">Color Favorito: </label>
+                        <input type="color" value="" id="color" name="color" required />
+            
+    
+                    </div>
+                    
+    
+                </div>
+    
+                <!-- Boton de subir -->
+                <input type="submit" value="ENVIAR" id="btnSubmit" name="btnSubmit" required />
+    
+    
+            </form>
+            
+        </article>
+    
+        <!-- Hr que divide article con aside
+        <hr id="divisionPartes">
+     -->
+        <!-- Sección de la izquierda -->
+        <aside>
+    
+            <!-- Titulo -->
+            <h1>FORMULARIO DE REGISTRO</h1>
+    
+            <figure id="icono">
+    
+
+                <div id="circle">
+
+                    <div id="circle1">
+    
+                        <img src="../assets/img/user.svg" alt="Incono De Usuario.sgv" title="user">
         
-        <div id="inputs">
-
-            <div id="nomApe">
-
-                <!-- Nombre -->
-                <label for="name">Nombre: </label>
-                <input type="text" value="" placeholder="Digitar Nombre" id="name" name="name" required />
-            
-
-                <!-- Apellido -->
-                <label for="lastName">Apellido: </label>
-                <input type="text" value="" placeholder="Digitar Apellido" id="lastName" name="lastName" required />
-
-            </div>
-
-            
-            <!-- Se encuentra el tipo de documento, numero de documento, email, direccion y celular -->
-            <div id="otrosDatos">
-
-                <!-- Datos relacionados con el documento de la persona (tipo doc y numero de doc)-->
-                <div id="doc">
-
-                    <!-- Selecionar el tipo de documento -->
-                    <select name="typeDocument" id="typeDocument" required>
-
-                        <!-- Opciones del input Select -->
-                        <option value="0">TI</option>
-                        <option value="1">CE</option>
-                        <option value="2">CC</option>
-
-                    </select>
-
-                    <!-- Documento (Número) -->
-                    <label for="document">Número Doc: </label>
-                    <input type="number" value="" placeholder="Digitar Documento" id="document" name="document" required />
+                    </div>
 
                 </div>
-
-                <!-- Email -->
-                <label for="email">Correo: </label>
-                <input type="email" value="" placeholder="Digitar Correo Electrónico" id="email" name="email" required />
-
-                <!-- Dirección -->
-                <label for="address">Dirección: </label>
-                <input type="text" value="" placeholder="Digitar Dirección" id="address" name="address" required />
-
-                <!-- TElefono Celular -->
-                <label for="cellphone">Celular: </label>
-                <input type="tel" value="" placeholder="Digitar Celular" id="cellphone" name="cellphone" required />
-            
-            </div>
-
-
-            <!-- Se encuentran datos relacionados con fechas y el color -->
-            <div id="timeColor">
-
-                <!-- Fecha -->
-                <label for="birthdate">Fecha De Nacimiento: </label>
-                <input type="date" value="" placeholder="Fecha de Nacimiento" id="birthdate" name="birthdate" required />
-
-                <!-- Tiempo (hora) -->
-                <label for="lunchTime">Hora Del Almuerzo: </label>
-                <input type="time" value="" id="lunchTime" name="lunchTime" required />
-            
-                <!-- Color -->
-                <label for="color">Color Favorito: </label>
-                <input type="color" value="" id="color" name="color" required />
+                
     
-
-            </div>
-            
-
-        </div>
-
-        <!-- Boton de subir -->
-        <input type="submit" value="ENVIAR" id="btnSubmit" name="btnSubmit" required />
-
-
-    </form>
-
+            </figure>
     
-    <!-- Div del output (salida de datos dentro de una "tabla") ------------------------------------------------------ -->
-    <div id="output">
+        </aside>
+    <!--     
+        <!-- Div del output (salida de datos dentro de una "tabla") ------------------------------------------------------ 
+        <div id="output">
+    
+            <h1>Datos Reflejados</h1>
+    
+            <!-- Aquí se van a mostrar los datos que se vayan a ingresar 
+            <div id="datosOut">
+    
+    
+    
+            </div>
+    
+        </div> -->
 
-        <h1>Datos Reflejados</h1>
-
-        <!-- Aquí se van a mostrar los datos que se vayan a ingresar -->
-        <div id="datosOut">
-
-
-
-        </div>
-
-    </div>
+</div>
 
     
 </body>
