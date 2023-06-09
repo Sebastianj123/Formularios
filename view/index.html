@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Cabeza (codigo visible solo para el navegador) -->
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario</title>
 
     <!-- Linkeado de css -->
     <link rel="stylesheet" href="../assets/css/style.css">
+
 </head>
 
 <body>
@@ -15,47 +19,81 @@
     <!-- Aquí dentro se encuentran 3 etiquetas "hijas directas" las cuales son h1 div#inputs y input:sub -->
     <form>
 
+        <!-- Titulo -->
         <h1>FORMULARIO DE REGISTRO</h1>
 
         
         <div id="inputs">
 
-            <!-- Nombre -->
-            <input type="text" value="" placeholder="Digitar Nombre" id="name" name="name" required />
-        
-            <!-- Apellido -->
-            <input type="text" value="" placeholder="Digitar Apellido" id="lastName" name="lastName" required />
+            <div id="nomApe">
 
-            <!-- Selecionar el tipo de documento -->
-            <select name="typeDocument" id="typeDocument" required>
+                <!-- Nombre -->
+                <label for="name">Nombre: </label>
+                <input type="text" value="" placeholder="Digitar Nombre" id="name" name="name" required />
+            
 
-                <!-- Opciones del input Select -->
-                <option value="0">TI</option>
-                <option value="1">CE</option>
-                <option value="2">CC</option>
+                <!-- Apellido -->
+                <label for="lastName">Apellido: </label>
+                <input type="text" value="" placeholder="Digitar Apellido" id="lastName" name="lastName" required />
 
-            </select>
+            </div>
 
-            <!-- Documento (Número) -->
-            <input type="number" value="" placeholder="Digitar Documento" id="document" name="document" required />
-        
-            <!-- Email -->
-            <input type="email" value="" placeholder="Digitar Correo Electrónico" id="email" name="email" required />
+            
+            <!-- Se encuentra el tipo de documento, numero de documento, email, direccion y celular -->
+            <div id="otrosDatos">
 
-            <!-- Dirección -->
-            <input type="text" value="" placeholder="Digitar Dirección" id="address" name="address" required />
+                <!-- Datos relacionados con el documento de la persona (tipo doc y numero de doc)-->
+                <div id="doc">
 
-            <!-- TElefono Celular -->
-            <input type="tel" value="" placeholder="Digitar Celular" id="cellphone" name="cellphone" required />
+                    <!-- Selecionar el tipo de documento -->
+                    <select name="typeDocument" id="typeDocument" required>
 
-            <!-- Fecha -->
-            <input type="date" value="" placeholder="Fecha de Nacimiento" id="birthdate" name="birthdate" required />
+                        <!-- Opciones del input Select -->
+                        <option value="0">TI</option>
+                        <option value="1">CE</option>
+                        <option value="2">CC</option>
 
-            <!-- Color -->
-            <input type="color" value="" id="color" name="color" required />
+                    </select>
 
-            <!-- Tiempo (hora) -->
-            <input type="time" value="" id="lunchTime" name="lunchTime" required />
+                    <!-- Documento (Número) -->
+                    <label for="document">Número Doc: </label>
+                    <input type="number" value="" placeholder="Digitar Documento" id="document" name="document" required />
+
+                </div>
+
+                <!-- Email -->
+                <label for="email">Correo: </label>
+                <input type="email" value="" placeholder="Digitar Correo Electrónico" id="email" name="email" required />
+
+                <!-- Dirección -->
+                <label for="address">Dirección: </label>
+                <input type="text" value="" placeholder="Digitar Dirección" id="address" name="address" required />
+
+                <!-- TElefono Celular -->
+                <label for="cellphone">Celular: </label>
+                <input type="tel" value="" placeholder="Digitar Celular" id="cellphone" name="cellphone" required />
+            
+            </div>
+
+
+            <!-- Se encuentran datos relacionados con fechas y el color -->
+            <div id="timeColor">
+
+                <!-- Fecha -->
+                <label for="birthdate">Fecha De Nacimiento: </label>
+                <input type="date" value="" placeholder="Fecha de Nacimiento" id="birthdate" name="birthdate" required />
+
+                <!-- Tiempo (hora) -->
+                <label for="lunchTime">Hora Del Almuerzo: </label>
+                <input type="time" value="" id="lunchTime" name="lunchTime" required />
+            
+                <!-- Color -->
+                <label for="color">Color Favorito: </label>
+                <input type="color" value="" id="color" name="color" required />
+    
+
+            </div>
+            
 
         </div>
 
@@ -69,6 +107,14 @@
     <!-- Div del output (salida de datos dentro de una "tabla") ------------------------------------------------------ -->
     <div id="output">
 
+        <h1>Datos Reflejados</h1>
+
+        <!-- Aquí se van a mostrar los datos que se vayan a ingresar -->
+        <div id="datosOut">
+
+
+
+        </div>
 
     </div>
 
