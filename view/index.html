@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <!-- Linkeado de css -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Formulario donde se van a ingresar los datos -->
+    <!-- Aquí dentro se encuentran 3 etiquetas "hijas directas" las cuales son h1 div#inputs y input:sub -->
+    <form>
+
+        <h1>FORMULARIO DE REGISTRO</h1>
+
+        
+        <div id="inputs">
+
+            <!-- Nombre -->
+            <input type="text" value="" placeholder="Digitar Nombre" id="name" name="name" required />
+        
+            <!-- Apellido -->
+            <input type="text" value="" placeholder="Digitar Apellido" id="lastName" name="lastName" required />
+
+            <!-- Selecionar el tipo de documento -->
+            <select name="typeDocument" id="typeDocument" required>
+
+                <!-- Opciones del input Select -->
+                <option value="0">TI</option>
+                <option value="1">CE</option>
+                <option value="2">CC</option>
+
+            </select>
+
+            <!-- Documento (Número) -->
+            <input type="number" value="" placeholder="Digitar Documento" id="document" name="document" required />
+        
+            <!-- Email -->
+            <input type="email" value="" placeholder="Digitar Correo Electrónico" id="email" name="email" required />
+
+            <!-- Dirección -->
+            <input type="text" value="" placeholder="Digitar Dirección" id="address" name="address" required />
+
+            <!-- TElefono Celular -->
+            <input type="tel" value="" placeholder="Digitar Celular" id="cellphone" name="cellphone" required />
+
+            <!-- Fecha -->
+            <input type="date" value="" placeholder="Fecha de Nacimiento" id="birthdate" name="birthdate" required />
+
+            <!-- Color -->
+            <input type="color" value="" id="color" name="color" required />
+
+            <!-- Tiempo (hora) -->
+            <input type="time" value="" id="lunchTime" name="lunchTime" required />
+
+        </div>
+
+        <!-- Boton de subir -->
+        <input type="submit" value="ENVIAR" id="btnSubmit" name="btnSubmit" required />
+
+
+    </form>
+
+    
+    <!-- Div del output (salida de datos dentro de una "tabla") ------------------------------------------------------ -->
+    <div id="output">
+
+
+    </div>
+
+    
+</body>
+
+<!-- script -->
+<script src="../assets/js/script.js"></script>
+
+</html>
