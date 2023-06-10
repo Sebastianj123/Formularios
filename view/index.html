@@ -88,6 +88,7 @@
                     <div id="doc">
 
                         <!-- Selecionar el tipo de documento -->
+                        
                         <select name="typeDocument" id="typeDocument" required>
 
                             <!-- Opciones del input Select -->
@@ -122,16 +123,21 @@
                 <!-- Se encuentran datos relacionados con fechas y el color -->
                 <div id="timeColor">
 
-                    <!-- Fecha -->
-                    <!-- <label class="dateBir" for="birthdate">Fecha De Nacimiento: </label> -->
-                    <input class="dateBir" type="date" value="" placeholder="Fecha de Nacimiento" id="birthdate" name="birthdate" required />
+                    <div id="time">
+                        
+                        <!-- Fecha -->
+                        <!-- <label class="dateBir" for="birthdate">Fecha De Nacimiento: </label> -->
+                        <input class="dateBir" type="date" value="" placeholder="Fecha de Nacimiento" id="birthdate" name="birthdate" required />
 
-                    <!-- Tiempo (hora) -->
-                    <!-- <label class="lunchTime" for="lunchTime">Hora Del Almuerzo: </label> -->
-                    <input class="lunchTime" type="time" value="" id="lunchTime" name="lunchTime" required />
+                        <!-- Tiempo (hora) -->
+                        <!-- <label class="lunchTime" for="lunchTime">Hora Del Almuerzo: </label> -->
+                        <input class="lunchTime" type="time" value="" id="lunchTime" name="lunchTime" required />
+                        
+                    </div>
                 
                     <!-- Color -->
                     <!-- <label class="color" for="color">Color Favorito: </label> -->
+                    <label for="color">Color Favorito: </label>
                     <input class="color" type="color" value="" id="color" name="color" required />
 
                 </div>
@@ -147,37 +153,7 @@
         
     </article>
 
-    <!-- Hr que divide article con aside
-    <hr id="divisionPartes">
-    -->
-
-
-
-
-
-
-
-
-
-
-
-<!--     
-    <!-- Div del output (salida de datos dentro de una "tabla") ------------------------------------------------------ 
-    <div id="output">
-
-        <h1>Datos Reflejados</h1>
-
-        <!-- Aquí se van a mostrar los datos que se vayan a ingresar 
-        <div id="datosOut">
-
-
-
-        </div>
-
-    </div> -->
-
 </div>
-
     
 </body>
 
