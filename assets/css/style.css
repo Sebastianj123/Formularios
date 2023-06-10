@@ -1,3 +1,4 @@
+/* Estilo */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,14 +7,14 @@
 }
 
 /* Display flex y centrado con flexbox */
-body, #bodydiv, article, form, #nomApe, #otrosDatos, #doc, #timeColor, aside, #time{
+body, #bodydiv, form, #nomApe, #otrosDatos, #doc, #timeColor, aside, #time, #colorDiv, #generoDiv, #userDiv {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+}   
 
 /* flexBox column y gap */
-article, form, #nomApe, #otrosDatos, #timeColor, aside {
+article, form, #nomApe, #otrosDatos, #timeColor,#userDiv, aside {
     flex-direction: column;
     gap: 1vh;
 } 
@@ -38,7 +39,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     backdrop-filter: blur(2px);
-    overflow: hidden;
+    /* overflow: hidden; */
+    overflow-x: hidden;
 }
 
 body::before {
@@ -51,7 +53,7 @@ body::before {
 body::after {
     content: "";
     background: rgb(7, 16, 100);
-    width: 400vw;
+    width: 100vh;
     height: 100vw;
     z-index: -1;
     transform: translate(-55vw) rotate(-90deg);
@@ -65,26 +67,34 @@ body::after {
     width: 100%;
     gap: 24%;
     margin: 0 5vw;
+    max-height: 90vh;
 }
 
 /* Parte Izquierda */
 article {
 
     flex: 1;
-    position: relative;
-    padding: 2vw;
     border-radius: 2vw;
     background-color: #000f;
-
+    max-height: 90vh;
+    max-width: 40vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 85% 15%;
+    justify-content: center;
+    padding: 5vh;
+    box-shadow: inset 0 0 1vw #333,
+    0 0 1vw #333;
 }
 
-form {
-    flex-direction: column;
-    max-width: 40vw;
+
+#inputs {
+    width: 90%;
+    overflow-y: scroll;
 }
 
 #inputs > div {
-    padding: 2vh 1vw;
+    padding: 3%;
 }
 
 #doc {
@@ -97,8 +107,48 @@ input {
     border-radius: 3vw
 }
 
+hr {
+    border-color: rgb(0, 209, 199);
+}
+
+#typeDocument {
+    height: 3vw;
+    border-radius: 1vw;
+    font-weight: bold;
+}
+
+
+#colorDiv, #generoDiv{
+    width: 100%;
+    flex: 1;
+    gap: 1vw;
+}
+
+#colorLabel, #generoDiv label{
+    color: #fff;
+}
+
 #color {
+    flex: 1;
+    padding: .3vw;
+}
+
+#Genero {
+    justify-self: center;
+    width: 80%;
     padding: .5vw;
+    border-radius: 2vw;
+    text-align: center;
+}
+
+
+
+
+#btnSubmit {
+    width: 80%;
+    height: 70%;
+    justify-self: center;
+    align-self: center;
 }
 
 
@@ -161,7 +211,7 @@ figure {
     border-radius: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
 img {
