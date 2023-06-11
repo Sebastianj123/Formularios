@@ -7,7 +7,7 @@
 }
 
 /* Display flex y centrado con flexbox */
-body, #bodydiv, form, #nomApe, #otrosDatos, #doc, #timeColor, aside, #time, #colorDiv, #generoDiv, #userDiv {
+body, #bodydiv, form, #nomApe, #otrosDatos, #doc, #timeColor, aside, #time, #colorDiv, #generoDiv, #userDiv,#terminos {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,7 +31,7 @@ body::before, body::after {
 }
 
 
-
+/* Body */
 body {
     background: url(../img/wallpaper.jpg);
     background-position: center;
@@ -43,6 +43,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Body textura del fondo */
 body::before {
     content: "";
     opacity: .3;
@@ -50,18 +51,7 @@ body::before {
     z-index: -2;
 }
 
-body::after {
-    content: "";
-    background: rgb(7, 16, 100);
-    width: 100vh;
-    height: 100vw;
-    z-index: -1;
-    transform: translate(-55vw) rotate(-90deg);
-    opacity: .9;
-}
-
-
-
+/* Body contenedor */
 #bodydiv {
 
     width: 100%;
@@ -87,52 +77,61 @@ article {
     0 0 1vw #333;
 }
 
-
+/* Seccion donde se encuentran los inputs */
 #inputs {
     width: 90%;
     overflow-y: scroll;
 }
 
+/* Selector de todos los Div con el fin de separalos un poco */
 #inputs > div {
     padding: 3%;
 }
 
-#doc {
-    width: 100%;
-}
-
+/* Selector general de los inputs el cual les da un width, padding y border-radius */
 input {
     width: 100%;
     padding: 1vw;
     border-radius: 3vw
 }
 
+/* Divisor entre los diferentes grupos de inputs "parecidos" */
 hr {
     border-color: rgb(0, 209, 199);
 }
 
+/* Selecto del Div "Doc" el cual contiene el tipo de documento y el numero de documento */
+#doc {
+    width: 100%;
+}
+
+/* Selecciona la caja select "tipo de documento" */
 #typeDocument {
     height: 3vw;
     border-radius: 1vw;
     font-weight: bold;
 }
 
-
+/* Selecta los divs color y genero con el fin de acomodarlos, ya que su contenido es parecido*/
 #colorDiv, #generoDiv{
     width: 100%;
     flex: 1;
     gap: 1vw;
 }
 
-#colorLabel, #generoDiv label{
+/* Aplicación del color blanco a:
+ - los label  */
+label{
     color: #fff;
 }
 
+/* input Color */
 #color {
     flex: 1;
     padding: .3vw;
 }
 
+/* Input de genero name "sex" */
 #Genero {
     justify-self: center;
     width: 80%;
@@ -141,9 +140,18 @@ hr {
     text-align: center;
 }
 
+/* Terminos y condiciones DIV */
+#terminos {
+    gap: 1vw;
+}
+
+/* Inpunt checkbox de terminos y condiciones */
+#check {
+    width: auto;
+}
 
 
-
+/* Boton de subir */
 #btnSubmit {
     width: 80%;
     height: 70%;
@@ -151,24 +159,7 @@ hr {
     align-self: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Sección Derecha */
+/* Sección Derecha ------------------------*/
 
 aside {
     flex: 1;
@@ -177,6 +168,18 @@ aside {
     /* height: 100%; */
 }
 
+/* Fondo azul del aside */
+body::after {
+    content: "";
+    background: rgb(7, 16, 100);
+    width: 100vh;
+    height: 100vw;
+    z-index: -1;
+    transform: translate(-55vw) rotate(-90deg);
+    opacity: .9;
+}
+
+/* Titulo del aside */
 aside h1 {
     color: rgb(0, 0, 0);
     flex:.5;
@@ -195,6 +198,7 @@ figure {
     flex: 1;
 }
 
+/* Circulo externo del logo */
 #circle {
     width: 100%;
     height: 100%;
@@ -204,6 +208,7 @@ figure {
     box-shadow: inset 0 0 1vw #444;
 }
 
+/* Cituclo interno del logo */
 #circle1 {
     box-shadow: inset 0 0 1vw #000;
     padding: 2vw;
@@ -214,11 +219,7 @@ figure {
     /* align-items: center; */
 }
 
+/* Logo */
 img {
     width: 100%;
-}
-
-span {
-    font-size: 10vw;
-    color: #000;
 }
