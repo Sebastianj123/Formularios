@@ -1,0 +1,12 @@
+create or replace database formUser;
+
+create table formUser.userInfo (
+	id int PRIMARY KEY AUTO_INCREMENT,
+    name varchar(40),
+    surName varchar(40)
+);
+
+CREATE TABLE formUser.doc (
+    id int,
+    
+)
