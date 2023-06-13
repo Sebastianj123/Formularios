@@ -7,14 +7,14 @@
 }
 
 /* Display flex y centrado con flexbox */
-body, #bodydiv, form, #nomApe, #otrosDatos, #doc, #timeColor, aside, #time, #colorDiv, #generoDiv, #userDiv,#terminos {
+body, #bodydiv, form, #nomApe, #otrosDatos, #doc, #timeColor, aside, #time, #colorDiv, #generoDiv, #userDiv, #bot, #terminos {
     display: flex;
     justify-content: center;
     align-items: center;
 }   
 
 /* flexBox column y gap */
-article, form, #nomApe, #otrosDatos, #timeColor,#userDiv, aside {
+article, form, #nomApe, #otrosDatos, #timeColor, #bot, #userDiv, aside {
     flex-direction: column;
     gap: 1vh;
 } 
@@ -61,26 +61,43 @@ body::before {
 }
 
 /* Parte Izquierda */
-article {
+form { /*la acabo d cambiar */
 
     flex: 1;
     border-radius: 2vw;
     background-color: #000f;
-    max-height: 90vh;
-    max-width: 40vw;
+    height: 90vh;
+    width: 50vw;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 85% 15%;
     justify-content: center;
-    padding: 5vh;
     box-shadow: inset 0 0 1vw #333,
     0 0 1vw #333;
+    position: relative ;
+
+}
+
+article { /*la acabo d cambiar */
+
+    position: fixed;
+    top: 2vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 9fr 2fr;
+    justify-content: center;
+    padding: 2vw 3vw;
+    overflow-y: scroll;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+
 }
 
 /* Seccion donde se encuentran los inputs */
 #inputs {
-    width: 90%;
-    overflow-y: scroll;
+    width: 100%;
+    /* overflow-y: scrol; */
+    height: max-content;
 }
 
 /* Selector de todos los Div con el fin de separalos un poco */
@@ -107,6 +124,7 @@ hr {
 
 /* Selecciona la caja select "tipo de documento" */
 #typeDocument {
+    min-height: 3vw;
     height: 3vw;
     border-radius: 1vw;
     font-weight: bold;
@@ -153,10 +171,13 @@ label{
 
 /* Boton de subir */
 #btnSubmit {
+
     width: 80%;
-    height: 70%;
+    height: 100%;
     justify-self: center;
     align-self: center;
+    padding: 1vh, 2vw;
+
 }
 
 /* Sección Derecha ------------------------*/

@@ -54,11 +54,11 @@
         </aside>
 
         <!-- Sección de la derecha -->
-    <article>
+    <form action="../controler/form.php" method="post">
 
             <!-- Formulario donde se van a ingresar los datos -->
             <!-- Aquí dentro se encuentran etiquetas "hijas directas" las cuales son hr div#inputs -->
-        <form action="../controler/form.php" method="post">
+        <article>
                 
                 <!-- Etiqueta div que contiene todo el "formulario" (hace las de form) -->
                 <!-- cotiene:
@@ -108,7 +108,7 @@
 
                             <!-- Documento (Número) -->
                             <!-- <label for="document" class="document">Número Doc: </label> -->
-                        <input type="number" value="" class="document"placeholder="Digitar Documento" id="document" name="document" required />
+                        <input type="number" value="" class="document" placeholder="Digitar Documento" id="document" name="document" required />
 
                     </div>
 
@@ -211,20 +211,21 @@
             
             </div>
         
-        <input type="submit" value="ENVIAR" id="btnSubmit" name="btnSubmit" required />
-            
-        </form>
+            <div id="bot">
 
-        <!-- Boton de subir -->
-        <input type="submit" value="ENVIAR" id="btnSubmit" name="btnSubmit" required />
- 
-    </article>
+                <input type="button" value="ENVIAR" id="btnSubmit" name="btnSubmit" required />
+
+            </div>
+
+        </article>
+
+    </form>
 
 </div>
     
 </body>
 
 <!-- script -->
-<script src=""></script>
+<script src="../assets/js/inDat.js"></script>
 
 </html>
