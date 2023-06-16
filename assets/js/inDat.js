@@ -1,55 +1,149 @@
 // Logica
 
-var datos = {
+var asa = {
+    a: 'Posee un espacio',
+    b: 'Posee un caracter numerico',
+    c: 'Posee un caracter alfabetico',
+    d: 'No conicide con la estructura de un correo',
+    e: 'Esta fuera de la longuitud Minima',
+    f: 'Esta fuera de la longuitud Maxima',
+    g: 'El campo esta vacio',
+    h: 'No se a seleccionado el campo',
+    i: 'No posee la edad requerida',
+    j: 'Ingrese un valor valido'
 
-},
+}
+
+var datos = new Array,
 as;
 
-
+const errores = {};
 
 document.getElementById('btnSubmit').addEventListener('click', ()=> {
 
-    function revisar(n,i) {
+    function revicion(a) {
+        return espace = /\s/g.test(a),
+        num = /[\d]/g.test(a),
+        alpha = /([A-Z])\w+/gi.test(a),
+        long = a.length;
+    }
+
+    function revisarCamp(n,i) {
+        
+        errores.n = [];
+        revicion(i);
+
+        switch (n) {
+
+            
+            case 'Nombre':
+            case 'Apellido':
+                
+
+                if (espace) {
+                    n.push(asa.a);
+                }
+                if (num) {
+                    n.push(asa.b);
+                }
+                if (long < 5) {
+                    n.push(asa.e);
+                }
+
+                if (long > 30) {
+                    n.push(asa.f);
+                }
+
+                break;
+                
+            case 'Fecha' :
+
+                errores.n = [];
+                let fecha = (Date.prototype.getUTCFullYear()) - datos.Fecha.getUTCFullYear;
+                
+                if  (fecha < 18) {
+                    n.push(asa.i);
+                }
+
+                if (fecha >= 120) {
+                    n.push(asa.j);
+                }
+
+            break;
+
+            default:
+                break;
+        }
+    }
+
+    function vacio(n,i) {
         if (i === "") {
 
             return alert (`El campo "${n}" esta vacío`), as = true;
         
-        } else if (n == 'tem') {
-            return as = false;
+        } else {
+            
+            return revisarCamp(n,i);
+            
         } 
      }
     
 datos = {
-    nom: document.getElementById('name').value,
-    ape: document.getElementById('lastName').value,
-    typD: document.getElementById('typeDocument').value,
-    doc: document.getElementById('document').value,
-    email: document.getElementById('email').value,
-    addres: document.getElementById('address').value,
-    tel: document.getElementById('cellphone').value,
-    fecha: document.getElementById('birthdate').value,
-    time: document.getElementById('lunchTime').value,
-    color: document.getElementById('color').value,
-    sex: document.getElementById('Genero').value,
-    user: document.getElementById('nameUser').value,
-    pass: document.getElementById('password').value,
-    pass1: document.getElementById('password1').value,
-    tem: document.getElementById('check').value
+    Nombre: document.getElementById('name').value,
+    Apellido: document.getElementById('lastName').value,
+    TipoDocumento: document.getElementById('typeDocument').value,
+    Documento: document.getElementById('document').value,
+    Email: document.getElementById('email').value,
+    Addres: document.getElementById('address').value,
+    Telefono: document.getElementById('cellphone').value,
+    Fecha: document.getElementById('birthdate').value,
+    Hora: document.getElementById('lunchTime').value,
+    Color: document.getElementById('color').value,
+    Genero: document.getElementById('Genero').value,
+    Usuario: document.getElementById('nameUser').value,
+    Contraseña: document.getElementById('password').value,
+    Contraseña_Verificacion: document.getElementById('password1').value,
+    Terminos: document.getElementById('check').value
 };
 
 console.log(datos);
 for (let clave in datos){
-    revisar(clave,datos[clave]);
+
+    vacio(clave,datos[clave]);
 
     if (as) {
+        
+        
         break;
+
     } else {
+        
         window.open('../../view/vista2.html');
         document.close();
         return alert('se abrira vista2');
-        break;
+    
     }
 
   }
 
 })
+
+
+/*
+    // Si contiene espacios
+    function espace(a) {
+        return espace = /\s/g.test(a);
+    }
+
+    function num(a) {
+        return num = /[\d]/g.test(a);
+    }
+
+    function alpha(a) {
+        return alpha = /([A-Z])\w+/gi.test(a);
+    }
+
+    function long(a) {
+        return long = a.length;
+    }
+    */
