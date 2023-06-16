@@ -1,5 +1,7 @@
-// Logica
+    // DECLARACION DE VARIABLES 
 
+/* Objeto asa
+    Este objeto contiene todos los enunciados de los errores posibles (o casi todos)    */
 const asa = {
     a: 'Posee un espacio',
     b: 'Posee un caracter numerico',
@@ -12,10 +14,15 @@ const asa = {
     i: 'No posee la edad requerida',
     j: 'Ingrese un valor valido'
 },
+/* Objeto errores
+    Este objeto se hizo con el fin de guardar todos los errores validados en el formulario
+    el cuál al final de su verificación se iterara y mostrara el output de estos mismos
+*/
 errores = {};
 
+
 var datos = new Array,
-as;
+vas;
 
 
 
@@ -51,6 +58,7 @@ document.getElementById('btnSubmit').addEventListener('click', ()=> {
         // Se ejecuta la funcion "revisión"
         revicion(i);
 
+        // Se valida input por input por medio de condicionales
         switch (n) {
             
             case 'Nombre':
@@ -116,9 +124,9 @@ document.getElementById('btnSubmit').addEventListener('click', ()=> {
     }
 
     function vacio(n,i) {
-        if (i === "") {
+        if (i == "") {
 
-            return alert (`El campo "${n}" esta vacío`), as = true;
+            return alert (`El campo "${n}" esta vacío`), vas = true;
         
         } else {
             
@@ -151,7 +159,7 @@ for (let clave in datos){
 
     vacio(clave,datos[clave]);
 
-    if (as) {
+    if (vas) {
         
         break;
 

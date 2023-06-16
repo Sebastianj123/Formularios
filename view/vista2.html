@@ -13,9 +13,56 @@
 
 </head>
 <body>
+
+    <form action="" id="formulario1" onsubmit="validateData(this.id,event);">
+        
+        <input type="text" name="nombre" id="nombre">
+        <input type="text" name="lastName" id="lastName">
+        
+        <!-- Subir -->
+        <input type="submit" value="">
+
+    </form>
     
 </body>
 
     <!-- script -->
-<script src=""></script>
+<script>
+    function validateInput(a) {
+        if (a == '') {
+            return false;
+        } else {
+            
+            return true;
+        }
+}
+    function validateData(objForm,e) {
+        let objFormulario = document.getElementById(objForm),
+        auxiliar = objFormulario.querySelectorAll('input'),
+        validate = true;
+        
+    
+        
+        for (let i = 0; i < auxiliar.length; i++) {
+            if(auxiliar[i].type == "submit") {
+                alert('Es un boton')
+            } else {
+                
+                if (validateInput(auxiliar[i].value)) {
+                    // i = auxiliar.length
+                    validate = true;
+                } else {
+                    validate = false;
+                }
+            }
+
+            if (validate == true) {
+                getData(objForm);
+            }
+        }
+
+        // debugger;
+        e.preventDefault();
+    }
+</script>
 </html>
