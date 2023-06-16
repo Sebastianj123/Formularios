@@ -1,6 +1,6 @@
 // Logica
 
-var asa = {
+const asa = {
     a: 'Posee un espacio',
     b: 'Posee un caracter numerico',
     c: 'Posee un caracter alfabetico',
@@ -30,28 +30,50 @@ document.getElementById('btnSubmit').addEventListener('click', ()=> {
 
     function revisarCamp(n,i) {
         
-        errores.n = [];
+        
         revicion(i);
 
         switch (n) {
 
             
             case 'Nombre':
-            case 'Apellido':
-                
+
+            errores.Nombre = [];
 
                 if (espace) {
-                    n.push(asa.a);
+                    Nombre.push(asa.a);
                 }
+
                 if (num) {
-                    n.push(asa.b);
+                    Nombre.push(asa.b);
                 }
+
                 if (long < 5) {
-                    n.push(asa.e);
+                    Nombre.push(asa.e);
                 }
 
                 if (long > 30) {
-                    n.push(asa.f);
+                    Nombre.push(asa.f);
+                }
+
+                break;
+            
+            case 'Apellido':
+
+                errores.Apellido = [];
+
+                if (espace) {
+                    Apellido.push(asa.a);
+                }
+                if (num) {
+                    Apellido.push(asa.b);
+                }
+                if (long < 5) {
+                    Apellido.push(asa.e);
+                }
+
+                if (long > 30) {
+                    Apellido.push(asa.f);
                 }
 
                 break;
