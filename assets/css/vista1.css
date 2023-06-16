@@ -86,6 +86,7 @@ article { /*la acabo d cambiar */
     justify-content: center;
     padding: 2vw 3vw;
     overflow-y: scroll;
+    overflow-x: hidden; 
     position: absolute;
     width: 100%;
     height: 100%;

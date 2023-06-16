@@ -11,16 +11,25 @@ const asa = {
     h: 'No se a seleccionado el campo',
     i: 'No posee la edad requerida',
     j: 'Ingrese un valor valido'
-
-}
+},
+errores = {};
 
 var datos = new Array,
 as;
 
-const errores = {};
+
 
 document.getElementById('btnSubmit').addEventListener('click', ()=> {
-
+    
+    /* Funcion revisión.
+    
+    Consta de una función declarada la cual contiene un parametro de entrada
+    y cuatro parametros de salida (espace, num, alpha, long) los cuales
+    corresponden a un balor BOLEANO (True or false) si es que posee,
+    espacios, caracteres númericos o alfabeticos.
+    El ultimo parametro de salida es long el cual devuelve el largo de la cadena ingresada
+    
+    */
     function revicion(a) {
         return espace = /\s/g.test(a),
         num = /[\d]/g.test(a),
@@ -28,32 +37,40 @@ document.getElementById('btnSubmit').addEventListener('click', ()=> {
         long = a.length;
     }
 
+    /* Función revisarCamp
+    
+        En esta función se ejecuta la función revisión con el fin de ejecutarla por cada 
+        uno de los inputs.
+
+        Se tiene un switch (condicional) el cual posee otros condicionales if() por 
+        cada propiedad o error no deseado que se encuentre en el formulario
+        el cual por cada input se crea un array en el objeto de errores que en un futuro se iterara 
+    */
     function revisarCamp(n,i) {
         
-        
+        // Se ejecuta la funcion "revisión"
         revicion(i);
 
         switch (n) {
-
             
             case 'Nombre':
 
             errores.Nombre = [];
 
                 if (espace) {
-                    Nombre.push(asa.a);
+                    errores.Nombre.push(asa.a);
                 }
 
                 if (num) {
-                    Nombre.push(asa.b);
+                    errores.Nombre.push(asa.b);
                 }
 
                 if (long < 5) {
-                    Nombre.push(asa.e);
+                    errores.Nombre.push(asa.e);
                 }
 
                 if (long > 30) {
-                    Nombre.push(asa.f);
+                    errores.Nombre.push(asa.f);
                 }
 
                 break;
@@ -63,17 +80,17 @@ document.getElementById('btnSubmit').addEventListener('click', ()=> {
                 errores.Apellido = [];
 
                 if (espace) {
-                    Apellido.push(asa.a);
+                    errores.Apellido.push(asa.a);
                 }
                 if (num) {
-                    Apellido.push(asa.b);
+                    errores.Apellido.push(asa.b);
                 }
                 if (long < 5) {
-                    Apellido.push(asa.e);
+                    errores.Apellido.push(asa.e);
                 }
 
                 if (long > 30) {
-                    Apellido.push(asa.f);
+                    errores.Apellido.push(asa.f);
                 }
 
                 break;
@@ -129,12 +146,12 @@ datos = {
 };
 
 console.log(datos);
+
 for (let clave in datos){
 
     vacio(clave,datos[clave]);
 
     if (as) {
-        
         
         break;
 
