@@ -19,6 +19,8 @@
         <!-- Scrollbar -->
     <link rel="stylesheet" href="../assets/css/scroll.css">
 
+        <!-- Error CSS -->
+    <link rel="stylesheet" href="../assets/css/error.css">
         <!-- Link del icono (página) -->
     <link rel="icon" href="../assets/img/form.ico">
 </head>
@@ -54,7 +56,7 @@
         </aside>
 
         <!-- Sección de la derecha -->
-    <form action="../controler/form.php" method="post">
+    <form action="" method="">
 
             <!-- Formulario donde se van a ingresar los datos -->
             <!-- Aquí dentro se encuentran etiquetas "hijas directas" las cuales son hr div#inputs -->
@@ -77,12 +79,12 @@
 
                         <!-- Nombre -->
                         <!-- <label for="name">Nombre: </label> -->
-                    <input type="text" value="" placeholder="Digitar Nombre" id="name" name="name" required />
+                    <input type="text" value="" placeholder="Digitar Nombre" id="name" name="name" required class="for"/>
                 
 
                         <!-- Apellido -->
                         <!-- <label for="lastName">Apellido: </label> -->
-                    <input type="text" value="" placeholder="Digitar Apellido" id="lastName" name="lastName" required />
+                    <input type="text" value="" placeholder="Digitar Apellido" id="lastName" name="lastName" required  class="for"/>
 
                 </div>
 
@@ -97,7 +99,7 @@
                     <div id="doc">
 
                             <!-- Selecionar el tipo de documento -->
-                        <select name="typeDocument" id="typeDocument" required>
+                        <select name="typeDocument" id="typeDocument" required class="for"/>
 
                                 <!-- Opciones del input Select -->
                             <option value="0">TI</option>
@@ -108,21 +110,21 @@
 
                             <!-- Documento (Número) -->
                             <!-- <label for="document" class="document">Número Doc: </label> -->
-                        <input type="number" value="" class="document" placeholder="Digitar Documento" id="document" name="document" required />
+                        <input type="number" value="" placeholder="Digitar Documento" id="document" name="document" required class="for" />
 
                     </div>
 
                         <!-- Email -->
                         <!-- <label class="email" for="email">Correo: </label> -->
-                    <input class="email" type="email" value="" placeholder="Digitar Correo Electrónico" id="email" name="email" required />
+                    <input type="email" value="" placeholder="Digitar Correo Electrónico" id="email" name="email" required class="for" />
 
                         <!-- Dirección -->
                         <!-- <label class="address" for="address">Dirección: </label> -->
-                    <input class="address"type="text" value="" placeholder="Digitar Dirección" id="address" name="address" required />
+                    <input type="text" value="" placeholder="Digitar Dirección" id="address" name="address" required class="for" />
 
                         <!-- TElefono Celular -->
                         <!-- <label class="cellphone"  for="cellphone">Celular: </label> -->
-                    <input class="cellphone" type="tel" value="" placeholder="Digitar Celular" id="cellphone" name="cellphone" required />
+                    <input type="tel" value="" placeholder="Digitar Celular" id="cellphone" name="cellphone" required class="for" />
                 
                 </div>
 
@@ -135,11 +137,11 @@
                         
                         <!-- Fecha -->
                         <!-- <label class="dateBir" for="birthdate">Fecha De Nacimiento: </label> -->
-                        <input class="dateBir" type="date" value="" placeholder="Fecha de Nacimiento" id="birthdate" name="birthdate" required />
+                        <input type="date" value="" placeholder="Fecha de Nacimiento" id="birthdate" name="birthdate" required class="for" />
 
                         <!-- Tiempo (hora) -->
                         <!-- <label class="lunchTime" for="lunchTime">Hora Del Almuerzo: </label> -->
-                        <input class="lunchTime" type="time" value="" id="lunchTime" name="lunchTime" required />
+                        <input type="time" value="" id="lunchTime" name="lunchTime" required class="for" />
                         
                     </div>
                 
@@ -150,7 +152,7 @@
                         <label for="color" id="colorLabel">Color Favorito: </label>
                             
                             <!-- Color input -->
-                        <input class="color" type="color" value="" id="color" name="color" required />
+                        <input type="color" value="" id="color" name="color" required class="for" />
 
                     </div>
 
@@ -166,7 +168,7 @@
                     <label for="sex">Genero: </label>
 
                         <!-- Input select -->
-                    <select name="sex" id="Genero" placeholder="Genero" required>
+                    <select name="sex" id="Genero" placeholder="Genero" required class="for">
 
                             <!-- Opciones del input select -->
                         <option></option>
@@ -185,13 +187,13 @@
                 <div id="userDiv">
 
                         <!-- Inpu nombre de usuario -->
-                    <input type="text" value="" id="nameUser" name="nameUser" placeholder="Digite Su Nombre De Usuario" required/>
+                    <input type="text" value="" id="nameUser" name="nameUser" placeholder="Digite Su Nombre De Usuario" required class="for"/>
                     
                         <!-- Input contraseña -->
-                    <input type="password" value="" id="password" name="password" placeholder="Digite Su Contraseña (Min 6 caracteres)" required />
+                    <input type="password" value="" id="password" name="password" placeholder="Digite Su Contraseña (Min 6 caracteres)" required class="for" />
                     
                         <!-- Input repetir contraseña -->
-                    <input type="password" value="" id="password1" name="password1" placeholder="Digite Nuevamente Su Contraseña" required />
+                    <input type="password" value="" id="password1" name="password1" placeholder="Digite Nuevamente Su Contraseña" required class="for" />
                 
                 </div>
 
@@ -202,7 +204,7 @@
                 <div id="terminos">
 
                         <!-- input Check -->
-                    <input type="checkbox" name="check" id="check">
+                    <input type="checkbox" name="check" id="check" class="for">
                     
                         <!-- Label del check -->
                     <label for="check">Acepto los <a href="" target="_blank">terminos y condiciones</a></label>
@@ -213,7 +215,7 @@
         
             <div id="bot">
 
-                <input type="button" value="ENVIAR" id="btnSubmit" name="btnSubmit" required />
+                <input type="button" value="ENVIAR" id="btnSubmit" name="btnSubmit" required onclick="validateData(this.id,event)"/>
 
             </div>
 
@@ -226,6 +228,6 @@
 </body>
 
 <!-- script -->
-<script src="../assets/js/inDat.js"></script>
+<script src="../assets/js/js.js"></script>
 
 </html>
