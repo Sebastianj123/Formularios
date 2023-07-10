@@ -1,0 +1,25 @@
+#mss {
+    display: none;
+}
+
+#mssE {
+    width: 100vw;
+    height: 20vh;
+    position: absolute;
+    top: 1vh;
+    left: 1vh;
+    background: #0f0;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+#mssE > p {
+    font-family: Sans-Serif Arial;
+}
+
+#mssE > div {
+    position: absolute;
+    top: 1vh;
+    right: 1vh;
+}
