@@ -3,7 +3,7 @@
     border: 1px solid #f00;
     scale: 1.2;
     animation-name: err;
-    animation: ;
+    animation: 1s;
 }
 
 .error:hover{
