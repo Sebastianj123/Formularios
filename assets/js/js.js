@@ -26,11 +26,31 @@ El ultimo parametro de salida es long el cual devuelve el largo de la cadena ing
 
 */
 
-function revicion(a) {
-    return espace = /\s/g.test(a),
-    num = /[\d]/g.test(a),
-    alpha = /([A-Z])\w+/gi.test(a),
-    long = a.length;
+// function revicion(a) {
+//     return espace = /\s/g.test(a),
+//     num = /[\d]/g.test(a),
+//     alpha = /([A-Z])\w+/gi.test(a),
+//     long = a.length;
+// }
+
+// Si contiene espacios
+function espace(a) {
+    return espace = /\s/g.test(a);
+}
+
+// Si contiene un Numero
+function num(a) {
+    return num = /[\d]/g.test(a);
+}
+
+// Si contiene un Caracter alfabetico
+function alpha(a) {
+    return alpha = /([A-Z])\w+/gi.test(a);
+}
+
+// Regresa la longuitud de la cadena
+function long(a) {
+    return long = a.length;
 }
 
 /*vacio(n,i)
@@ -41,14 +61,15 @@ de lo contrario devuelve otra función
 */
 
 function vacio(i,e) {
-
     let a;
     if (e.type == 'checkbox') a = e.checked;
-    else {a = e.value};
+    else a = e.value;
 
     if (a == "" || a == false) {
-        return alert (`El campo "${names[i]}" esta vacío`),
-        e.className += 'error';
+        mensajeError(names[i]);
+        e.className += ' error';
+        return alert (`El campo "${names[i]}" esta vacío`);
+        
     } else return true;
  }
 
@@ -80,7 +101,7 @@ llame la función "getData();" (obtener Dato/obtener Valor) con un valor de entr
 
 function validateData(objForm,e) {
 
-    let auxiliar = document.querySelectorAll('.for'),
+    var auxiliar = document.querySelectorAll('.for'),
     validate;
     
     console.log(objForm);
@@ -90,19 +111,12 @@ function validateData(objForm,e) {
 
     for (let i = 0; i <= auxiliar.length; i++) {
 
-            
+            let ax = auxiliar[i];
 
-            if (vacio(i,auxiliar[i])){
-                // debugger;
-                console.log(auxiliar[i] + ' ' + `"${auxiliar[i].value}"`);
-
-                // if (espace) {
-                //     console.log(a);
-                // }
-                
-                validate = true;
-            
-            } else {
+            if (vacio(i,ax)){
+                return validate = true;
+            } 
+            else {
                 console.log('f');
             }
 

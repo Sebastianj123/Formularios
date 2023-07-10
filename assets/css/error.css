@@ -1,4 +1,24 @@
-.error {
-    border: 2px solid #f00;
-    scale: 1.1;
+.error{
+    outline-color: #f00;
+    border: 1px solid #f00;
+    scale: 1.2;
+    animation-name: err;
+    animation: ;
+}
+
+.error:hover{
+    outline-color: #00f;
+    border: none;
+    scale:none;
+}
+
+@keyframes err {
+    
+    50% {
+        transform: rotate(-10deg) scale(1.05);
+    }
+
+    100% {
+        transform: rotate(10deg) scale(1.1);
+    }
 }
