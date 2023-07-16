@@ -26,28 +26,28 @@ CREATE TABLE other (
     other_clr VARCHAR(10)
 );
 
-CREATE TABLE usrInf (
-    usrInf_id INT PRIMARY KEY AUTO_INCREMENT,
-    usrInf_name VARCHAR(80),
-    usrInf_lastName VARCHAR(80),
+CREATE TABLE dts (
+    dts_id INT PRIMARY KEY AUTO_INCREMENT,
+    dts_name VARCHAR(80),
+    dts_lastName VARCHAR(80),
     sex_id INT,
     tyDoc_id INT,
-    usrInf_doc DOUBLE,
-    usrInf_addr VARCHAR(80),
-    usrInf_tel DOUBLE,
+    dts_doc DOUBLE,
+    dts_addr VARCHAR(80),
+    dts_tel DOUBLE,
     INDEX(sex_id,tyDoc_id),
-    CONSTRAINT `sexFk_usrInfFK_usrInf_id` FOREIGN KEY (sex_id) REFERENCES sex (sex_id) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT `tyDocFk_usrInfFK_tyDoc_id` FOREIGN KEY (tyDoc_id) REFERENCES tyDoc (tyDoc_id) ON DELETE CASCADE ON UPDATE CASCADE
+    CONSTRAINT `sexFk_dtsFK_dts_id` FOREIGN KEY (sex_id) REFERENCES sex (sex_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `tyDocFk_dtsFK_tyDoc_id` FOREIGN KEY (tyDoc_id) REFERENCES tyDoc (tyDoc_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 
 CREATE TABLE usr (
     usr_id INT PRIMARY KEY AUTO_INCREMENT,
-    usrInf_id INT,
+    dts_id INT,
     other_id INT,
     reg_id INT,
-    INDEX(usrInf_id,other_id,reg_id),
-    CONSTRAINT `usrInfPK_usrFk_usrInf_id` FOREIGN KEY (usrInf_id) REFERENCES `usrInf`(usrInf_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    INDEX(dts_id,other_id,reg_id),
+    CONSTRAINT `dtsPK_usrFk_dts_id` FOREIGN KEY (dts_id) REFERENCES `dts`(dts_id) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT `otherPK_usrFk_other_id` FOREIGN KEY (other_id) REFERENCES `other`(other_id) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT `regPK_usrFk_reg_id` FOREIGN KEY (reg_id) REFERENCES `reg`(reg_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -55,9 +55,9 @@ CREATE TABLE usr (
 DELIMITER //
 CREATE PROCEDURE i_data (IN nam VARCHAR(80), ltName VARCHAR(80), tyDoc INT, doc DOUBLE, em VARCHAR(80), addr VARCHAR(80), tel DOUBLE, dat DATE, tim TIME, clr VARCHAR(10), sex INT, usrNam VARCHAR(80), pass VARCHAR(80), term VARCHAR(10) ) 
 BEGIN
-INSERT INTO `usrInf` VALUES ( NULL, nam, ltName, sex, tyDoc, doc, addr, tel );
+INSERT INTO `dts` VALUES ( NULL, nam, ltName, sex, tyDoc, doc, addr, tel );
 INSERT INTO `other` VALUES ( NULL, dat, tim, clr );
 INSERT INTO `reg` VALUES ( NULL, em, usrName, pass, term ); 
--- INSERT INTO `usr` VALUES ( NULL, usrInf_id,other_id,reg_id)
+-- INSERT INTO `usr` VALUES ( NULL, dts_id,other_id,reg_id)
 END // 
 DELIMITER ();
