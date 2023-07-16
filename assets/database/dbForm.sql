@@ -53,11 +53,42 @@ CREATE TABLE usr (
 );
 
 DELIMITER //
-CREATE PROCEDURE i_data (IN nam VARCHAR(80), ltName VARCHAR(80), tyDoc INT, doc DOUBLE, em VARCHAR(80), addr VARCHAR(80), tel DOUBLE, dat DATE, tim TIME, clr VARCHAR(10), sex INT, usrNam VARCHAR(80), pass VARCHAR(80), term VARCHAR(10) ) 
+
+CREATE PROCEDURE i_data (
+    IN nam VARCHAR(80), 
+    IN ltName VARCHAR(80), 
+    IN tyDoc INT, 
+    IN doc DOUBLE, 
+    IN em VARCHAR(80), 
+    IN addr VARCHAR(80), 
+    IN tel DOUBLE, 
+    IN dat DATE, 
+    IN tim TIME, 
+    IN clr VARCHAR(10), 
+    IN sex INT, 
+    IN usrNam VARCHAR(80), 
+    IN pass VARCHAR(80), 
+    IN term VARCHAR(10)
+) 
 BEGIN
-INSERT INTO `dts` VALUES ( NULL, nam, ltName, sex, tyDoc, doc, addr, tel );
-INSERT INTO `other` VALUES ( NULL, dat, tim, clr );
-INSERT INTO `reg` VALUES ( NULL, em, usrName, pass, term ); 
--- INSERT INTO `usr` VALUES ( NULL, dts_id,other_id,reg_id)
-END // 
+    DECLARE dtsId INT;
+    DECLARE otherId INT;
+    DECLARE regId INT;
+    
+    -- Insertar en la tabla dts y obtener el último ID insertado
+    INSERT INTO dts VALUES (NULL, nam, ltName, sex, tyDoc, doc, addr, tel);
+    SET dtsId = LAST_INSERT_ID();
+    
+    -- Insertar en la tabla other y obtener el último ID insertado
+    INSERT INTO other VALUES (NULL, dat, tim, clr);
+    SET otherId = LAST_INSERT_ID();
+    
+    -- Insertar en la tabla reg y obtener el último ID insertado
+    INSERT INTO reg VALUES (NULL, em, usrNam, pass, term);
+    SET regId = LAST_INSERT_ID();
+    
+    -- Insertar en la tabla usr con los IDs obtenidos
+    INSERT INTO usr VALUES (NULL, dtsId, otherId, regId);
+    
+END //
 DELIMITER ();
