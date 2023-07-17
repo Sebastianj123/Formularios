@@ -1,11 +1,13 @@
-<?php 
+<?php
 
-$Host = '';
+$host = 'localhost'; 
+$db = 'fromProj'; 
+$usr = 'root';
+$pass = '';
 
-
-<!-- HTML -->
-<!DOCTYPE html>
-<html lang="en">
+echo(
+'<!DOCTYPE html/>
+<html lang="en"/>
 
 <!-- Cabeza (codigo visible solo para el navegador) -->
 <head>
@@ -108,13 +110,32 @@ $Host = '';
 
                             <!-- Selecionar el tipo de documento -->
                         <select name="typeDocument" id="typeDocument" required class="for"/>
+                        <!-- Opciones del input Select -->
+                        '
+                        $mysqli = new mysqli($host,$usr,$pass,$db);
 
-                                <!-- Opciones del input Select -->
-                            <option value="0">TI</option>
-                            <option value="1">CE</option>
-                            <option value="2">CC</option>
+                        if ($mysqli -> connect_errno) {
+                            echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+                            exit();
+                        }
 
-                        </select>
+                        $callTD = "SELECT * FROM vistaProductosBarato;";
+                        $tyDoc = $mysqli -> query($callTD);
+
+                        // Perform a query, check for error
+                        if (!$tyDoc) {
+                            echo("Error description: " . $mysqli -> error);
+                        }
+
+                        $row = $result -> fetch_assoc();
+                        for ($i=0; $i < count($row); $i++) { 
+                            echo('<option value="'.$i.'">'.$row['tyDoc_nam'][].'</option>');
+                        }
+                        
+                        
+                        $mysqli -> close();
+                        '</select>
+                        
 
                             <!-- Documento (Número) -->
                             <!-- <label for="document" class="document">Número Doc: </label> -->
@@ -249,5 +270,7 @@ $Host = '';
 <script src="../assets/js/validador.js"></script>
 <script src="../assets/js/declar.js"></script> -->
 
-</html>
+</html>'
+)
+
 ?>

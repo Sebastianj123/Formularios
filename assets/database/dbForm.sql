@@ -116,3 +116,6 @@ BEGIN
 SELECT `sex_nam` FROM `sex` WHERE `sex_id` = id;
 END //
 DELIMITER ();
+
+CREATE VIEW v_s AS
+SELECT `sex_nam` FROM `sex`;
