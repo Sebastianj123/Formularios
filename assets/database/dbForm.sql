@@ -54,7 +54,7 @@ CREATE TABLE usr (
 
 DELIMITER //
 
-CREATE PROCEDURE i_data (
+CREATE PROCEDURE i_d (
     IN nam VARCHAR(80), 
     IN ltName VARCHAR(80), 
     IN tyDoc INT, 
@@ -90,5 +90,29 @@ BEGIN
     -- Insertar en la tabla usr con los IDs obtenidos
     INSERT INTO usr VALUES (NULL, dtsId, otherId, regId);
     
+END //
+DELIMITER ();
+
+DELIMITER //
+CREATE PROCEDURE v_d (IN i INT)
+BEGIN
+SELECT U.usr_id FROM usr U INNER JOIN 
+dts D ON U.dts_id = D.dts_id INNER JOIN
+other O ON U.other_id = o.other_id INNER JOIN
+reg R ON U.reg_id = R.reg_id WHERE U.usr_id = i;
+END //
+DELIMITER ();
+
+DELIMITER //
+CREATE PROCEDURE v_tD (IN id INT)
+BEGIN
+SELECT `tyDoc_nam` FROM `tyDoc` WHERE `tyDoc_id` = id;
+END //
+DELIMITER ();
+
+DELIMITER //
+CREATE PROCEDURE v_s (IN id INT)
+BEGIN
+SELECT `sex_nam` FROM `sex` WHERE `sex_id` = id;
 END //
 DELIMITER ();
