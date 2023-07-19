@@ -1,22 +1,35 @@
-CREATE DATABASE fromProj;
+CREATE OR REPLACE DATABASE fromProj;
 
 CREATE TABLE tyDoc (
     tyDoc_id INT PRIMARY KEY AUTO_INCREMENT,
     tyDoc_nam VARCHAR(30),
-    tyDoc_desc TEXT
+    tyDoc_desc TEXT,
+    UNIQUE(tyDoc_nam,tyDoc_desc)
 );
+
+INSERT INTO `tyDoc` VALUES 
+(NULL, 'TI', 'Es el documento de identificación para los menores de edad, (entre 7 y 17 años).'),
+(NULL, 'CC', 'Cédula de ciudadanía representa en nuestra organización jurídica, un instrumento de vastos alcances en el orden social, en la medida en la que se considera idónea para identificar cabalmente a las personas, acreditar la ciudadanía y viabilizar el ejercicio de los derechos civiles y políticos (Mayores de dieciocho años recidentes "nacionales" del país)'),
+(NULL, 'CE', 'Es un documento de identidad que se otorga a los extranjeros mayores de 18 años, que sean titulares de una Visa superior a tres (3) meses ó a los beneficiarios de los mismos, con excepción de las visas de visitante y las preferenciales (diplomáticas, oficiales y de servicio).');
 
 CREATE TABLE sex (
     sex_id INT PRIMARY KEY AUTO_INCREMENT,
-    sex_nam VARCHAR(20)
+    sex_nam VARCHAR(20),
+    UNIQUE(sex_nam)
 );
+
+INSERT INTO `sex` VALUES 
+(NULL, 'Hombre'),
+(NULL, 'Mujer'),
+(NULL, 'Otro');
 
 CREATE TABLE reg (
     reg_id INT PRIMARY KEY AUTO_INCREMENT,
     reg_ema VARCHAR(80),
     reg_usrName VARCHAR(80),
     reg_pass VARCHAR(80),
-    reg_term VARCHAR(10)
+    reg_term VARCHAR(10),
+    UNIQUE(reg_usrName)
 );
 
 CREATE TABLE other (
@@ -36,6 +49,7 @@ CREATE TABLE dts (
     dts_addr VARCHAR(80),
     dts_tel DOUBLE,
     INDEX(sex_id,tyDoc_id),
+    UNIQUE(dts_doc),
     CONSTRAINT `sexFk_dtsFK_dts_id` FOREIGN KEY (sex_id) REFERENCES sex (sex_id) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT `tyDocFk_dtsFK_tyDoc_id` FOREIGN KEY (tyDoc_id) REFERENCES tyDoc (tyDoc_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -47,6 +61,7 @@ CREATE TABLE usr (
     other_id INT,
     reg_id INT,
     INDEX(dts_id,other_id,reg_id),
+    UNIQUE(dts_id,other_id,reg_id),
     CONSTRAINT `dtsPK_usrFk_dts_id` FOREIGN KEY (dts_id) REFERENCES `dts`(dts_id) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT `otherPK_usrFk_other_id` FOREIGN KEY (other_id) REFERENCES `other`(other_id) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT `regPK_usrFk_reg_id` FOREIGN KEY (reg_id) REFERENCES `reg`(reg_id) ON DELETE CASCADE ON UPDATE CASCADE
@@ -103,19 +118,8 @@ reg R ON U.reg_id = R.reg_id WHERE U.usr_id = i;
 END //
 DELIMITER ();
 
-DELIMITER //
-CREATE PROCEDURE v_tD (IN id INT)
-BEGIN
-SELECT `tyDoc_nam` FROM `tyDoc` WHERE `tyDoc_id` = id;
-END //
-DELIMITER ();
-
-DELIMITER //
-CREATE PROCEDURE v_s (IN id INT)
-BEGIN
-SELECT `sex_nam` FROM `sex` WHERE `sex_id` = id;
-END //
-DELIMITER ();
+CREATE VIEW v_tD AS
+SELECT * FROM `tyDoc`;
 
 CREATE VIEW v_s AS
-SELECT `sex_nam` FROM `sex`;
+SELECT * FROM `sex`;
