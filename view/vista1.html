@@ -26,6 +26,13 @@
     <link rel="stylesheet" href="../assets/css/mss.css">
         <!-- Link del icono (página) -->
     <link rel="icon" href="../assets/img/form.ico">
+
+    <!-- Scripts -->
+        <!-- Error -->
+    <script src="../assets/js/mssEr.js"></script>
+        <!-- validador -->
+    <script src="../assets/js/validador.js"></script>
+
 </head>
 
 <body>
@@ -59,7 +66,7 @@
         </aside>
 
         <!-- Sección de la derecha -->
-    <form action="" method="">
+    <form action="" method="post">
 
             <!-- Formulario donde se van a ingresar los datos -->
             <!-- Aquí dentro se encuentran etiquetas "hijas directas" las cuales son hr div#inputs -->
@@ -168,7 +175,7 @@
                 <div id="generoDiv">
 
                         <!-- Label -->
-                    <label for="sex">Genero: </label>
+                    <label for="Genero">Genero: </label>
 
                         <!-- Input select -->
                     <select name="sex" id="Genero" placeholder="Genero" required class="for">
@@ -218,7 +225,7 @@
         
             <div id="bot">
 
-                <input type="button" value="ENVIAR" id="btnSubmit" name="btnSubmit" required/>
+                <input type="button" value="ENVIAR" id="btnSubmit" name="btnSubmit" onclick="as(event)" required/>
 
             </div>
 
@@ -239,9 +246,10 @@
 </body>
 
 <!-- script -->
-<script src="../assets/js/js.js"></script>
+<script src="../assets/js/declar.js"></script>
+<script src="../assets/js/central.js"></script>
 <!-- <script src="../assets/js/mssEr.js"></script>
 <script src="../assets/js/validador.js"></script>
-<script src="../assets/js/declar.js"></script> -->
+ -->
 
 </html>

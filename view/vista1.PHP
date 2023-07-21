@@ -1,27 +1,21 @@
 <?php
-$host = 'localhost'; 
-$db = 'fromProj'; 
-$usr = 'root';
-$pass = '';
-$call_v_s = 'SELECT * FROM v_s;'; 
 
-$con = new mysqli($host,$usr,$pass,$db);
 
-if ($con->connect_error) {
-    die("Connection failed: " . $con->connect_error);
-} else {
-    echo "Connected successfully :d " . $host . ' ' . $db . ' ' . $usr . ' ' . $pass . '<br>' ;
-}
+$querys = array(
+    's_v' => 'SELECT * FROM `v_s`;',
+    'v_tD' => 'SELECT * FROM `v_tD;`',
+    'c_i_d' => 'call `i_d`();'
+);
 
-// Se llama la vista.
-$out = $con->query($call_v_s);
-if (!$out) {
-    echo "Error of sql query " . $con->error;
-    $con->close();
-} else {
-    // echo($out->num_rows);
-    $data = $out->fetch();
-    print_r($data);
+// // Se llama la vista.
+// $out = $con->query($call_v_s);
+// if (!$out) {
+//     echo "Error of sql query " . $con->error;
+//     $con->close();
+// } else {
+//     // echo($out->num_rows);
+//     $data = $out->fetch();
+//     print_r($data);
     
     // for ($i=0; $i < count($data); $i++) { 
     //     // echo($data[3][$i] . '1 <br>');
@@ -53,8 +47,8 @@ if (!$out) {
     // } else {
     //     echo "0 results";
     // }
-}
+// }
 
-$con->close();
+// $con->close();
 
 ?>

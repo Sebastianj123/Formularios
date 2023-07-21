@@ -20,10 +20,11 @@ const names = Object.freeze([
         espace: 'contiene un (os) espacios',
         inValid: 'contiene un (os) caracter (es) no valido (s)',
         long: 'está fuera de la longuitud (entre 4 - 30 letras)'
-    })
-    , btn = document.getElementById('btnSubmit'),
+    }), 
+    btn = document.getElementById('btnSubmit'),
     cEr = document.getElementById('mss'),
     texto = document.getElementById('texEr');
+
 var errors;
 
 
@@ -96,27 +97,27 @@ btn.addEventListener('click', (e) => {
 
         switch (i) {
             case 0: case 1:
-                if (!(30 >= long(ax) >= 4)) err({ i: i, inp: ax, er: mss.long })
+                if (!(30 >= long({inp:ax}) >= 4)) err({ i: i, inp: ax, er: mss.long })
                 else
                     break;
 
             case 3:
-                if (!(70 >= long(ax) >= 6)) err({ i: i, inp: ax, er: mss.long })
-                else validate.push(true)
+                if (!(70 >= long({inp:ax}) >= 6)) err({ i: i, inp: ax, er: mss.long })
+                else validate.push(true);
                 break;
 
             // case 2: none
 
             case 3: case 6: case 7: case 8: case 11:
-                if (espace(ax) || !(num(ax))) {
-                    if (!(num(ax))) err({ i: i, inp: ax, er: mss.inValid });
+                if (espace({inp:ax}) || !(num({inp:ax}))) {
+                    if (!(num({inp:ax}))) err({ i: i, inp: ax, er: mss.inValid });
                     else err({ i: i, inp: ax, er: mss.espace })
                 }
                 else validate.push(true)
                 break;
 
             case 4:
-                if (espace(ax)) err({ i: i, inp: ax, er: mss.espace })
+                if (espace({inp:ax})) err({ i: i, inp: ax, er: mss.espace })
                 break;
 
 

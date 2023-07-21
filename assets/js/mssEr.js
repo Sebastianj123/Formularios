@@ -2,9 +2,13 @@ function err({i,inp,er}) {
     
     inp.className += ' error';
     alert (`En "${names[i]}" el campo ${er}.`)
-    a();
+    valErr();
 }
 
-function a() {
+function valErr() {
     validate.push(false);
+}
+
+function valTru() {
+    validate.push(true);
 }
